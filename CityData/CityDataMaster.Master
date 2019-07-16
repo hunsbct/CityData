@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CityDataMaster.master.cs" Inherits="CityData.CityDataMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="~/img/favicon.ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManagr" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <nav>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand"><b>City Data</b></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="AddCity.aspx">Add City</a></li>
+                        <li><a href="ViewCity.aspx">View City</a></li>
+                        <li><a href="UpdateCity.aspx">Update City</a></li>
+                        <li><a href="Search.aspx">Search for Data</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                <p>Copyright 2018 - Cody Hunsberger</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,6 @@
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\bin\Debug\CityObjects.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\bin\Debug\CityObjects.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\obj\Debug\CityObjects.csprojResolveAssemblyReference.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\obj\Debug\CityObjects.csproj.CoreCompileInputs.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\obj\Debug\CityObjects.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityObjects\obj\Debug\CityObjects.pdb

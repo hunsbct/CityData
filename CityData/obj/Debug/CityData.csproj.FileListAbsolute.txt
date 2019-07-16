@@ -1,0 +1,17 @@
+G:\CIS 3342\Project4\CityData\CityData\CityData\obj\Debug\CityData.csprojResolveAssemblyReference.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityData.dll.config
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityData.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityData.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityDataWebService.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityObjects.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\Utilities.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityDataWebService.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityDataWebService.dll.config
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\CityObjects.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\Utilities.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\obj\Debug\CityData.csprojResolveAssemblyReference.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\obj\Debug\CityData.csproj.CoreCompileInputs.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\obj\Debug\CityData.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityData\obj\Debug\CityData.pdb

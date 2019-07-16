@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllCityData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCityDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCityDataResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataForCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="City">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Population" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedianHouseholdIncome" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PercentOwners" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PercentRenters" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedianHomeValue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedianMaleAge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MedianFemaleAge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnemploymentRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CrimeIndex" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataForCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataForCityResult" type="tns:City" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCitiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="tns:City" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityStatePairs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCityStatePairsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityStatePairsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationLessThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationLessThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_PopulationLessThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationEquals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationEqualsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_PopulationEqualsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationGreaterThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_PopulationGreaterThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_PopulationGreaterThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeLessThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeLessThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHouseholdIncomeLessThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeEquals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeEqualsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHouseholdIncomeEqualsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeGreaterThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHouseholdIncomeGreaterThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHouseholdIncomeGreaterThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueLessThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueLessThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHomeValueLessThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueEquals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueEqualsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHomeValueEqualsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueGreaterThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianHomeValueGreaterThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianHomeValueGreaterThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeLessThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeLessThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianMaleAgeLessThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeEquals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeEqualsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianMaleAgeEqualsResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeGreaterThan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Search_MedianMaleAgeGreaterThanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Search_MedianMaleAgeGreaterThanResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="tns:City" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateCityTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateCityTableResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllCityDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCityData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCityDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCityDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForCitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataForCity" />
+  </wsdl:message>
+  <wsdl:message name="GetDataForCitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataForCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStates" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCitySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCity" />
+  </wsdl:message>
+  <wsdl:message name="AddCitySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCityStatePairsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityStatePairs" />
+  </wsdl:message>
+  <wsdl:message name="GetCityStatePairsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityStatePairsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationLessThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_PopulationLessThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationLessThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_PopulationLessThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationEqualsSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_PopulationEquals" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationEqualsSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_PopulationEqualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationGreaterThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_PopulationGreaterThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_PopulationGreaterThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_PopulationGreaterThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeLessThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeLessThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeLessThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeLessThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeEqualsSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeEquals" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeEqualsSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeEqualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeGreaterThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeGreaterThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHouseholdIncomeGreaterThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHouseholdIncomeGreaterThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueLessThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueLessThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueLessThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueLessThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueEqualsSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueEquals" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueEqualsSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueEqualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueGreaterThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueGreaterThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianHomeValueGreaterThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianHomeValueGreaterThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeLessThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeLessThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeLessThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeLessThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeEqualsSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeEquals" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeEqualsSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeEqualsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeGreaterThanSoapIn">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeGreaterThan" />
+  </wsdl:message>
+  <wsdl:message name="Search_MedianMaleAgeGreaterThanSoapOut">
+    <wsdl:part name="parameters" element="tns:Search_MedianMaleAgeGreaterThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateCityTableSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateCityTable" />
+  </wsdl:message>
+  <wsdl:message name="PopulateCityTableSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateCityTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CityDataServiceSoap">
+    <wsdl:operation name="GetAllCityData">
+      <wsdl:input message="tns:GetAllCityDataSoapIn" />
+      <wsdl:output message="tns:GetAllCityDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForCity">
+      <wsdl:input message="tns:GetDataForCitySoapIn" />
+      <wsdl:output message="tns:GetDataForCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:input message="tns:GetStatesSoapIn" />
+      <wsdl:output message="tns:GetStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:input message="tns:GetCitiesSoapIn" />
+      <wsdl:output message="tns:GetCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <wsdl:input message="tns:AddCitySoapIn" />
+      <wsdl:output message="tns:AddCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityStatePairs">
+      <wsdl:input message="tns:GetCityStatePairsSoapIn" />
+      <wsdl:output message="tns:GetCityStatePairsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationLessThan">
+      <wsdl:input message="tns:Search_PopulationLessThanSoapIn" />
+      <wsdl:output message="tns:Search_PopulationLessThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationEquals">
+      <wsdl:input message="tns:Search_PopulationEqualsSoapIn" />
+      <wsdl:output message="tns:Search_PopulationEqualsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationGreaterThan">
+      <wsdl:input message="tns:Search_PopulationGreaterThanSoapIn" />
+      <wsdl:output message="tns:Search_PopulationGreaterThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeLessThan">
+      <wsdl:input message="tns:Search_MedianHouseholdIncomeLessThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianHouseholdIncomeLessThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeEquals">
+      <wsdl:input message="tns:Search_MedianHouseholdIncomeEqualsSoapIn" />
+      <wsdl:output message="tns:Search_MedianHouseholdIncomeEqualsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeGreaterThan">
+      <wsdl:input message="tns:Search_MedianHouseholdIncomeGreaterThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianHouseholdIncomeGreaterThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueLessThan">
+      <wsdl:input message="tns:Search_MedianHomeValueLessThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianHomeValueLessThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueEquals">
+      <wsdl:input message="tns:Search_MedianHomeValueEqualsSoapIn" />
+      <wsdl:output message="tns:Search_MedianHomeValueEqualsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueGreaterThan">
+      <wsdl:input message="tns:Search_MedianHomeValueGreaterThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianHomeValueGreaterThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeLessThan">
+      <wsdl:input message="tns:Search_MedianMaleAgeLessThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianMaleAgeLessThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeEquals">
+      <wsdl:input message="tns:Search_MedianMaleAgeEqualsSoapIn" />
+      <wsdl:output message="tns:Search_MedianMaleAgeEqualsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeGreaterThan">
+      <wsdl:input message="tns:Search_MedianMaleAgeGreaterThanSoapIn" />
+      <wsdl:output message="tns:Search_MedianMaleAgeGreaterThanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <wsdl:input message="tns:UpdateCitySoapIn" />
+      <wsdl:output message="tns:UpdateCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateCityTable">
+      <wsdl:input message="tns:PopulateCityTableSoapIn" />
+      <wsdl:output message="tns:PopulateCityTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CityDataServiceSoap" type="tns:CityDataServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCityData">
+      <soap:operation soapAction="http://tempuri.org/GetAllCityData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForCity">
+      <soap:operation soapAction="http://tempuri.org/GetDataForCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap:operation soapAction="http://tempuri.org/GetStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://tempuri.org/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <soap:operation soapAction="http://tempuri.org/AddCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityStatePairs">
+      <soap:operation soapAction="http://tempuri.org/GetCityStatePairs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationLessThan">
+      <soap:operation soapAction="http://tempuri.org/Search_PopulationLessThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationEquals">
+      <soap:operation soapAction="http://tempuri.org/Search_PopulationEquals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationGreaterThan">
+      <soap:operation soapAction="http://tempuri.org/Search_PopulationGreaterThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeLessThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeLessThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeEquals">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeEquals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeGreaterThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeGreaterThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueLessThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHomeValueLessThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueEquals">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHomeValueEquals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueGreaterThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianHomeValueGreaterThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeLessThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianMaleAgeLessThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeEquals">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianMaleAgeEquals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeGreaterThan">
+      <soap:operation soapAction="http://tempuri.org/Search_MedianMaleAgeGreaterThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <soap:operation soapAction="http://tempuri.org/UpdateCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateCityTable">
+      <soap:operation soapAction="http://tempuri.org/PopulateCityTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CityDataServiceSoap12" type="tns:CityDataServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCityData">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCityData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForCity">
+      <soap12:operation soapAction="http://tempuri.org/GetDataForCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap12:operation soapAction="http://tempuri.org/GetStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap12:operation soapAction="http://tempuri.org/GetCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <soap12:operation soapAction="http://tempuri.org/AddCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityStatePairs">
+      <soap12:operation soapAction="http://tempuri.org/GetCityStatePairs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationLessThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_PopulationLessThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationEquals">
+      <soap12:operation soapAction="http://tempuri.org/Search_PopulationEquals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_PopulationGreaterThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_PopulationGreaterThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeLessThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeLessThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeEquals">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeEquals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHouseholdIncomeGreaterThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHouseholdIncomeGreaterThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueLessThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHomeValueLessThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueEquals">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHomeValueEquals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianHomeValueGreaterThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianHomeValueGreaterThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeLessThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianMaleAgeLessThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeEquals">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianMaleAgeEquals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_MedianMaleAgeGreaterThan">
+      <soap12:operation soapAction="http://tempuri.org/Search_MedianMaleAgeGreaterThan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateCityTable">
+      <soap12:operation soapAction="http://tempuri.org/PopulateCityTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CityDataService">
+    <wsdl:port name="CityDataServiceSoap" binding="tns:CityDataServiceSoap">
+      <soap:address location="http://localhost:54561/CityDataService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CityDataServiceSoap12" binding="tns:CityDataServiceSoap12">
+      <soap12:address location="http://localhost:54561/CityDataService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

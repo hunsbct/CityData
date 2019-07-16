@@ -1,0 +1,457 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body {
+    background: url(../img/bgmodified.png) no-repeat center center fixed;
+    height: auto;
+    width: auto;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.col-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-height {
+    display: grid;
+}
+
+.left-col {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.right-col {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.mid-col {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.btn-normal {
+    cursor: default;
+}
+
+.alert-message {
+    border: 2px solid black;
+    background-color: rgba(255,255,0,0.7);
+    width: 400px;
+    margin: 0 auto;
+    opacity: 0;
+    margin-top: 30px;
+    height: 100px;
+    border-radius: 5px;
+    font-size: 14pt;
+    padding: 10px;
+}
+
+.alert-message-no-results {
+    border: 2px solid black;
+    background-color: rgba(255,0,0,0.7);
+    margin: 0 auto;
+    opacity: 0;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 24pt;
+    padding: 30px;
+}
+
+.main-btn {
+    color: #FFFFFF;
+    background-color: #357AE8;
+    border-color: #130269;
+}
+
+    .main-btn:hover,
+    .main-btn:focus,
+    .main-btn:active,
+    .main-btn.active,
+    .open .dropdown-toggle.main-btn {
+        color: #FFFFFF;
+        background-color: #285FAD;
+        border-color: #130269;
+    }
+
+    .main-btn:active,
+    .main-btn.active,
+    .open .dropdown-toggle.main-btn {
+        background-image: none;
+    }
+
+    .main-btn.disabled,
+    .main-btn[disabled],
+    fieldset[disabled] .main-btn,
+    .main-btn.disabled:hover,
+    .main-btn[disabled]:hover,
+    fieldset[disabled] .main-btn:hover,
+    .main-btn.disabled:focus,
+    .main-btn[disabled]:focus,
+    fieldset[disabled] .main-btn:focus,
+    .main-btn.disabled:active,
+    .main-btn[disabled]:active,
+    fieldset[disabled] .main-btn:active,
+    .main-btn.disabled.active,
+    .main-btn[disabled].active,
+    fieldset[disabled] .main-btn.active {
+        background-color: gray;
+        border-color: #130269;
+        opacity: 0.5;
+    }
+
+    .main-btn .badge {
+        color: #357AE8;
+        background-color: #FFFFFF;
+    }
+
+.confirm-message {
+    border: 2px solid black;
+    background-color: rgba(0,255,0,0.7);
+    width: 400px;
+    margin: 0 auto;
+    opacity: 0;
+    margin-top: 5px;
+}
+
+.duplicate-message {
+    border: 2px solid black;
+    background-color: rgba(255,255,0,0.7);
+    width: 400px;
+    margin: 0 auto;
+    opacity: 0;
+    margin-top: 30px;
+}
+
+.activity-div {
+    display: block;
+    border-radius: 5px;
+    background-color: RGBA(0,0,0,0.5);
+    margin: 10px;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.activity-div-add-city {
+    display: block;
+    border-radius: 5px;
+    background-color: RGBA(0,0,0,0.5);
+    margin: 10px;
+    padding: 15px;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    top: 100px;
+    right: 100px;
+}
+
+.btn-add-city {
+    margin-top: 50px;
+}
+
+.div-city-state, .div-pop-med-income, div-rent-homeval-maleage, div-femage-unemployment-crime {
+    width: 100%;
+    display: block;
+}
+
+.add-city-row-1a {
+    width: 40%;
+    float: left;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-1b {
+    width: 55%;
+    float: right;
+    right: 0;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-2a {
+    width: 25%;
+    float: left;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-2b {
+    width: 35%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-2c {
+    width: 35%;
+    float: right;
+    right: 0;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-3a {
+    width: 35%;
+    float: left;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-3b {
+    width: 30%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-3c {
+    width: 30%;
+    float: right;
+    right: 0;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-4a {
+    width: 35%;
+    float: left;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-4b {
+    width: 30%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.add-city-row-4c {
+    width: 30%;
+    float: right;
+    right: 0;
+    display: inline-block;
+    margin: 5px;
+}
+
+.warning-label {
+    background-color: RGBA(220,0,0,0.4);
+    color: white;
+    width: 70%;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14pt;
+    border: 1px solid black;
+}
+
+.success-label {
+    background-color: RGBA(0,220,0,0.4);
+    color: white;
+    width: 70%;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14pt;
+    border: 1px solid #CCCCCC;
+}
+
+.ddl-state {
+    width: 30%;
+    float: left;
+    display: inline-block;
+}
+
+.ddl-city {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    margin-left: 70px;
+}
+
+.div-btn-view {
+    width: 20%;
+    display: inline-block;
+    float: right;
+    margin-right: 10%;
+}
+
+.div-btn-view > input {
+    width: 65%;
+    height: 100%;
+}
+
+.btn-submit-city {
+    margin: 20px;
+}
+
+
+.div-ddl-attribute {
+    width: 30%;
+    float: left;
+    display: inline-block;
+    margin: 5px;
+}
+
+.div-ddl-comparison {
+    width: 10%;
+    display: inline-block;
+    margin: 5px;
+    float: left;
+    left: 35%;
+}
+
+.div-search-value {
+    width: 35%;
+    display: inline-block;
+    margin: 5px;
+    float: left;
+    left: 50%;
+}
+
+.search-button {
+    width: 5%;
+    float: left;
+    left: 80%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.navbar-inverse {
+    border-radius: 0;
+}
+
+.title {
+    width: 100%;
+    height: 75px;
+    font-size: 36pt;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 0;
+}
+
+.div-controls {
+    display: block;
+    width: auto;
+    height: 50px;
+}
+
+.div-view-city {
+    display: block;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.7);
+    top: 10%;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.view-city-state-row {
+    display: block;
+    text-align: left;
+    padding-left: 30px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 24pt;
+    color: white;
+}
+
+.repeater {
+    color: #DDDDDD;
+    bottom: 10px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 20%;
+    right: 0;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
+.search-table {
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid #DDDDDD;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+    .search-table th {
+        padding: 5px;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        font-size: 10pt;
+        border: 1px solid #BBBBBB;
+    }
+
+    .search-table tr td {
+        padding: 2px;
+        text-align: left;
+        margin: auto;
+        border: 1px solid #BBBBBB;
+    }
+
+.footer {
+    background-color: RGB(51,51,51);
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    height: 30px;
+}
+
+.footer-text {
+    color: white;
+    font-size: 10px;
+    float: right;
+}
+
+.main-content {
+    display: block;
+    position: absolute;
+    top: 50px;
+    bottom: 30px;
+    width: 100%;
+}
+
+.div-view-city {
+    opacity: 1;
+}
+
+.view-city-table {
+    width: 100%;
+}
+
+.view-city-table tr td {
+    padding: 10px;
+    text-align: left;
+    color: white;
+    font-size: 16pt;
+    font-style: italic;
+}
+
+.datatitle {
+    text-align: right !important;
+    font-style: normal !important;
+    border-right: 1px solid white;
+}

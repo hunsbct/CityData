@@ -1,0 +1,24 @@
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\ApplicationInsights.config
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\CityDataWebService.dll.config
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\CityDataWebService.dll
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\CityDataWebService.pdb
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\Utilities.dll
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\Utilities.pdb
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.csprojResolveAssemblyReference.cache
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.dll
+G:\CIS 3342\Project4\CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.csprojResolveAssemblyReference.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.csproj.CoreCompileInputs.cache
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\CityDataWebService.dll.config
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\CityDataWebService.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\CityDataWebService.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\CityObjects.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\Utilities.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\CityObjects.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\Utilities.pdb
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.dll
+C:\Users\codyt\Desktop\Project4_CityData\CityData\CityDataWebService\obj\Debug\CityDataWebService.pdb
